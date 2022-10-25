@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income & Expenditure</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+</head>
+
+<body>
+    <style type="text/css">
+        h1 {
+            font-size: 70px;
+        }
+        </style>
+    <h1>Budgtr</h1>
+
+    <h2>Bank Amount Balance</h2>
+                <h2 class='bank'>$<%=bank%>
+                </h2>
+
+                <table>
+                    <% for(let i=0; i < budget.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%=budget[i].date %>
+                                    <span id="name">
+                                        <a href="/<%=i%>">
+                                            <%=budget[i].name %>
+                                        </a>
+                                    </span>
+                                    <%=budget[i].amount %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </table>
+
+</body>
+<style type="text/css">
+    #addNew {
+        font-size: 40px;
+    }
+</style>
+<span id="addNew">
+<a href="/budgets/new">Add new item</a>
+</span>
+</html>

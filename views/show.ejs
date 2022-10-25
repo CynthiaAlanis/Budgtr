@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Income & Expenditure</title>
+        <link rel="stylesheet" href="/normalize.css" />
+
+    </head>
+    <body>
+        <div class="container">
+            <h1><%=budget.name%></h1>
+            <button onclick="document.location='/budgets'">BACK</button>
+            <br /><br />
+
+            Name: <%=budget.name %>
+            <br /><br />
+            Date: <%= budget.date%>
+            <br /><br />
+
+            From: <%= budget.from%>
+            <br /><br />
+
+            Amount: <%= budget.amount%>
+            <br /><br />
+
+            Tags: <%= budget.tags%>
+            <br /><br />
+        </div>
+    </body>
+</html>
