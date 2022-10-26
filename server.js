@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const methodOverride = require("method-override");
-const PORT = process.env.PORT
+const PORT = 3000
 //data
 const budget = require('./models/budget.js');
 
@@ -46,12 +46,13 @@ app.post('/budgets' , (req,res) => {
 
 // SHOW route
 app.get('/budgets/:index', (req, res) => {
-  res.render('show.ejs', {
-      budget: budget[req.params.index],
-  });
-});
+  res.render('budgets/show.ejs', {
+      fruit: budgets[req.params.index],
+      title: 'show'
+  })
+})
+
+// Listener
 
 // Listener
 app.listen(PORT, ()=> console.log(`You are listening to the smoothe sounds of port ${PORT}...`))
-  
-  
