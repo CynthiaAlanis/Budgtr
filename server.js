@@ -8,8 +8,8 @@ const budget = require('./models/budget.js');
 
 
 // body-parser
-app.use(express.static('public')); //statically match with file named public
-app.use(express.json()); // for parsing application/json
+app.use(express.static('public')); 
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
@@ -46,9 +46,8 @@ app.post('/budgets' , (req,res) => {
 
 // SHOW route
 app.get('/budgets/:index', (req, res) => {
-  res.render('budgets/show.ejs', {
-      fruit: budgets[req.params.index],
-      title: 'show'
+  res.render('show.ejs', {
+      budget: budget[req.params.index],
   })
 })
 
